@@ -1,26 +1,32 @@
 import random
 
-# This list contains the random responses (you can add your own or translate them into your own language too)
-random_responses = ["That is quite interesting, please tell me more.",
-                    "I see. Do go on.",
-                    "Why do you say that?",
-                    "Funny weather we've been having, isn't it?",
-                    "Let's change the subject.",
-                    "Did you catch the game last night?"]
+# 랜덤으로 선택될 응답 목록을 리스트로 저장
+random_responses = ["흥미로운 이야기네요. 조금 더 자세히 알려주실 수 있나요?",
+                    "이해했어요! 계속 이야기해주세요.",
+                    "왜 그런가요?",
+                    "오늘 날씨가 정말 별로지 않나요?",
+                    "우리 대화 주제를 바꿔볼까요?",
+                    "어제 밤 경기는 보셨나요?"]
 
-print("Hello, I am Marvin, the simple robot.")
-print("You can end this conversation at any time by typing 'bye'")
-print("After typing each answer, press 'enter'")
-print("How are you today?")
+# 프로그램 실행 시 처음 안내 문구 출력 
+print("안녕하세요! 저는 단순 챗봇 철수입니다.")
+print("대화를 끝내고 싶을 때는 '끝'이라고 보내주세요!") # '끝'이라고 보내면 대화 종료라는 것을 알림 
+print("문장을 입력 후에는 '엔터'를 눌러주세요") # 문장을 작성 후에는 엔터를 눌러달라는 안내 문장
+print("그럼 대화를 시작해봐요!")
+print("오늘 기분이 어떠세요?") # 대화 첫 시작 문장 출력
 
 while True:
-    # wait for the user to enter some text
+    # 사용자가 입력할 때까지 기다림
     user_input = input("> ")
-    if user_input.lower() == "bye":
-        # if they typed in 'bye' (or even BYE, ByE, byE etc.), break out of the loop
+    
+    # 사용자가 끝이라는 단어를 말하면 종료
+    if "끝" in user_input:
         break
+    
+    # 사용자의 입력이 끝이 아니면, 랜덤 응답 목록에서 하나 선택하여 출력
     else:
         response = random.choices(random_responses)[0]
     print(response)
 
-print("It was nice talking to you, goodbye!")
+# 반복문 탈출 시 끝 인사하고 프로그램 실행 종료
+print("당신과 대화할 수 있어서 즐거웠어요. 그럼 안녕히가세요!")
