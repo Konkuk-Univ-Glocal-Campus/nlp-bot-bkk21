@@ -1,3 +1,4 @@
+# 기본 챗봇 영어 버전
 import random
 
 # This list contains the random responses (you can add your own or translate them into your own language too)
